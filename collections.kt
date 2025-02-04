@@ -19,6 +19,7 @@ fun main () {
     shapes.remove("pentagon") // remove item from the list
 
 
+
     // Read-only set 
     val readOnlyFruit = setOf("lemon", "apple", "mango", "banana");
     
@@ -29,6 +30,24 @@ fun main () {
     println(fruits.count());
     fruits.add("kiwi");
     fruits.remove("kiwi");
+
+
+
+    // Read-only map  
+    val readOnlyJuiceMenu = mapOf("apple" to 100, "banana" to 5, "kiwi" to 200, "peach" to 80);
+    println(readOnlyJuiceMenu);
+
+    // Mutable and explicity type decalration map
+    val juiceMenu: MutableMap<String, Int> = mutableMapOf("apple" to 100, "banana" to 50);
+    println(juiceMenu["apple"]);
+    juiceMenu["Dragon Fruit"] = 500;
+    juiceMenu.remove("Dragon Fruit") // To remove value from a map
+    println(juiceMenu.count());
+    juiceMenu.containsKey("apple") // To check if the key exists in the map or not
+    print(juiceMenu.keys) // To get the List of all the keys
+    print(juiceMenu.values) // To get the List of all the values
+    print("apple" in juiceMenu.keys) // To check if the key "apple" exists in the map
+    print(100 in juiceMenu.values) // To check if the value 100 exists in the map
 
 }
 
@@ -62,7 +81,14 @@ To get the length of the set you can use count() function
 
 // ? Maps: Set of key-value pairs where keys are unique and map to only one value
 /*
+Map uses key-value pairs, each value is uniquely indentified by its key, In the map you cna have only one unique key for a value but you can have muktiple same values for different different keys
 
+To Create a read-only map you can use mapOf() function
+To Crete a mutable map you can use muatbleMapOf() function
+
+To access a value in a map, use the indexed access operator [] with the key
+* If you try to access a key, value pair that does not exists you will see a null value
+* You can use indexed access operator to add new values inside the map
 */
 
 // Each collection type can be mutable or read-only
